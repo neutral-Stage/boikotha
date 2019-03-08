@@ -71,6 +71,7 @@
                             @endif
                                     <div class="ibox-body" style="">
                                 <form class="form-horizontal" method="POST" action="{{ route('store.reviewer') }}" enctype="multipart/form-data">
+                                     @csrf
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label">নাম</label>
                                         <div class="col-sm-10">
