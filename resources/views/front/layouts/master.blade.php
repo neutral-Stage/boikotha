@@ -32,6 +32,21 @@
 </head>
 
 <body>
+
+	{{-- <a href="{{ route('check') }}">Check</a>  || --}}
+	<div class="language" style="float:right;margin-right:200px;padding: 15px 20px;background-color:black;">
+		@if(session('lang') == 'ban') 
+		  	<a href="{{ route('english') }}" style="color:white;">English</a>  
+		  @elseif(session('lang') == 'eng')
+		  	<a href="{{ route('bangla') }}" style="color:white;">বাংলা</a>
+		  @else
+		  	<a href="{{ route('english') }}" style="color:white;">English</a>
+		  @endif
+
+	</div>
+		  
+
+
     @include('front.layouts.menu')
     
     @yield('content')
@@ -94,9 +109,8 @@
 				</div>
 			</div>
 			<div class="row footer-bottom d-flex justify-content-between align-items-center">
-				<p class="col-lg-12 footer-text text-center"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="{{asset('front')}}/https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+				<p class="col-lg-12 footer-text text-center">
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | boikotha.net</p>
 			</div>
 		</div>
 	</footer>
@@ -122,10 +136,17 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	<script>
 		$(document).ready(function(){
     $('.nav-menu li').hover(function(){
-        $(this).addClass('animated bounceIn');
+        $(this).addClass('animated headShake');
     });
     $('.nav-menu li').mouseleave(function(){
-        $(this).removeClass('animated bounceIn');
+        $(this).removeClass('animated headShake');
+	});
+	
+    $('.language').hover(function(){
+        $(this).addClass('animated pulse');
+    });
+    $('.language').mouseleave(function(){
+        $(this).removeClass('animated pulse');
     });
 });
 	</script>

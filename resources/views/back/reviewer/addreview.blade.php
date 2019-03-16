@@ -111,4 +111,94 @@
                         </div>
                     </div>
 
+
+
+                                            {{--  Table Table  --}}
+
+
+                    <div class="ibox">
+                    <div class="ibox-body">
+                                <ul class="nav nav-tabs tabs-line">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="#tab-7-1" data-toggle="tab"><i class="fa fa-flag" style="color:blue;"></i> English</a>
+                                    </li>
+                                    
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#tab-7-3" data-toggle="tab"><i class="fa fa-flag" style="color:green;"></i> Bangla</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade show active" id="tab-7-1"><div class="ibox-head">
+                        <div class="ibox-title">Reviewers Table</div>
+                    </div>
+                    <div class="ibox-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        
+                                        <th>Name</th>
+                                        <th>Photo</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($enre as $en)
+                                      <tr>
+                                        
+                                        <td>{{ $en->name }}</td>
+                                        <td><img class="img-thumbnail" src="{{ asset('reiviewer_photo/'.$en->photo) }}"></td>
+                                        
+                                        <td>
+                                            <a href="{{ route('edit.reviewer',$en->id) }}" class="btn btn-success"><i class="fa fa-pencil"></i> Edit</a>
+                                            <a href="{{ route('delete.reviewer',$en->id) }}" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</a>
+                                        </td>
+                                    </tr>  
+                                    @endforeach
+                                    
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div></div>
+                                   
+                                    <div class="tab-pane fade" id="tab-7-3"><div class="ibox-head">
+                        <div class="ibox-title">Reviewers Table</div>
+                    </div>
+                    <div class="ibox-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    
+                                    <tr>
+                                        
+                                        <th>Name</th>
+                                        <th>Photo</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($bnre as $bn)
+                                    <tr>
+                                        
+                                        <td>{{ $bn->name }}</td>
+                                        <td><img class="img-thumbnail" src="{{ asset('reiviewer_photo/'.$bn->photo) }}" ></td>
+                                        
+                                        <td>
+                                            <a href="{{ route('edit.reviewer',$bn->id) }}" class="btn btn-success"><i class="fa fa-pencil"></i> Edit</a>
+                                            <a href="{{ route('delete.reviewer',$bn->id) }}" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</a>
+                                        </td>
+                                    </tr>    
+                                    @endforeach
+                                    
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div></div>
+                                </div><br></div>
+                    
+                    </div>
+                
+
 @endsection

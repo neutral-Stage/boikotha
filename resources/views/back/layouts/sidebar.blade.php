@@ -6,7 +6,7 @@
                         <img src="{{ asset('back') }}/assets/img/admin-avatar.png" width="45px" />
                     </div>
                     <div class="admin-info">
-                        <div class="font-strong">James Brown</div><small>Administrator</small></div>
+                        <div class="font-strong">{{ Auth::user()->name }}</div><small>Administrator</small></div>
                 </div>
                 <ul class="side-menu metismenu">
                     <li>
@@ -27,23 +27,12 @@
                     </li>
                     <li>
                         <a href="javascript:;"><i class="sidebar-item-icon fa fa-edit"></i>
-                            <span class="nav-label">Forms</span><i class="fa fa-angle-left arrow"></i></a>
+                            <span class="nav-label">Books</span><i class="fa fa-angle-left arrow"></i></a>
                         <ul class="nav-2-level collapse">
                             <li>
-                                <a href="form_basic.html">Basic Forms</a>
+                                <a href="{{ route('admin.books') }}">Add Books</a>
                             </li>
-                            <li>
-                                <a href="form_advanced.html">Advanced Plugins</a>
-                            </li>
-                            <li>
-                                <a href="form_masks.html">Form input masks</a>
-                            </li>
-                            <li>
-                                <a href="form_validation.html">Form Validation</a>
-                            </li>
-                            <li>
-                                <a href="text_editors.html">Text Editors</a>
-                            </li>
+                            
                         </ul>
                     </li>
                     <li>

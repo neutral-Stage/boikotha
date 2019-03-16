@@ -25,17 +25,17 @@
 					<section class="post-area">
 						<div class="row">
 
-                            {{--  Reviewers  --}}
-                            
+														{{--  Reviewers  --}}
+							@if(session('lang') == 'eng')						
+              @foreach ($enre as $er)
 							<div class="col-lg-6 col-md-6">
 								<div class="single-post-item">
 									<div class="post-thumb">
-										<img class="img-fluid" src="{{ asset('front') }}/img/archive/c1.jpg" alt="">
+										<img class="img-fluid" src="{{ asset('reiviewer_photo/'.$er->photo) }}" alt="">
 									</div>
 									<div class="post-details">
-										<h4><a href="#">An Stormy Evening</a></h4>
-										<p>There is a moment in the life of any aspiring astronomer that it is time to buy that first telescope. It’s
-											exciting to think about setting up your own viewing station.</p>
+										<h4><a href="#">{{ $er->name }}</a></h4>
+										<p>{{ $er->des }}</p>
 										<div class="blog-meta">
 											<a href="#" class="m-gap"><span class="lnr lnr-calendar-full"></span>March 14, 2018</a>
 											<a href="#" class="m-gap"><span class="lnr lnr-bubble"></span>05</span></a>
@@ -44,7 +44,46 @@
 								</div>
 							</div>
 
-							
+							@endforeach
+							@elseif(session('lang') == 'ban')
+							@foreach ($bnre as $br)
+							<div class="col-lg-6 col-md-6">
+								<div class="single-post-item">
+									<div class="post-thumb">
+										<img class="img-fluid" src="{{ asset('reiviewer_photo/'.$br->photo) }}" alt="">
+									</div>
+									<div class="post-details">
+										<h4><a href="#">{{ $br->name }}</a></h4>
+										<p>{{ $br->des }}</p>
+										<div class="blog-meta">
+											<a href="#" class="m-gap"><span class="lnr lnr-calendar-full"></span>March 14, 2018</a>
+											<a href="#" class="m-gap"><span class="lnr lnr-bubble"></span>05</span></a>
+										</div>
+									</div>
+								</div>
+							</div>
+							@endforeach
+
+							@else
+							@foreach ($enre as $er)
+							<div class="col-lg-6 col-md-6">
+								<div class="single-post-item">
+									<div class="post-thumb">
+										<img class="img-fluid" src="{{ asset('reiviewer_photo/'.$er->photo) }}" alt="">
+									</div>
+									<div class="post-details">
+										<h4><a href="#">{{ $er->name }}</a></h4>
+										<p>{{ $er->des }}</p>
+										<div class="blog-meta">
+											<a href="#" class="m-gap"><span class="lnr lnr-calendar-full"></span>March 14, 2018</a>
+											<a href="#" class="m-gap"><span class="lnr lnr-bubble"></span>05</span></a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							@endforeach
+							@endif
 
 							{{--  <div class="col-lg-12">
 								<nav class="blog-pagination justify-content-center d-flex">
@@ -78,24 +117,8 @@
 
 
 				<div class="col-lg-4 sidebar">
-
-					<div class="single-widget protfolio-widget">
-						<img class="img-fluid" src="{{ asset('front') }}/img/blog/user2.png" alt="">
-						<a href="#">
-							<h4>Peter Anderson</h4>
-						</a>
-						<p class="p-text">
-							Boot camps have its supporters andit sdetractors. Some people do not understand why you should have to spend
-							money on boot camp whenyou can get. Boot camps have itssuppor ters andits detractors.
-						</p>
-						<ul class="social-links">
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-							<li><a href="#"><i class="fa fa-behance"></i></a></li>
-						</ul>
-						<img src="{{ asset('front') }}/img/sign.png" alt="">
-					</div>
+					
+					
 
 					<div class="single-widget popular-posts-widget">
 						<div class="jq-tab-wrapper" id="horizontalTab">
