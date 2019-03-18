@@ -9,4 +9,13 @@ class Reviewer extends Model
     protected $fillable = [
         'name', 'des', 'photo','type'
     ];
+
+    public function review()
+    {
+        return $this->hasMany('App\Review', 'reviewer_id');
+    }
+    public function book()
+    {
+        return $this->hasOne('App\book');
+    }
 }

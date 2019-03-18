@@ -49,5 +49,9 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/add-books', 'Dashboard\booksController@index')->name( 'admin.books');
     Route::post( '/store-books', 'Dashboard\booksController@store')->name( 'store.books');
 
+    //Review
+    Route::get('/add-review', 'Dashboard\reviewController@index')->name('add.review');
+    Route::post('/store-review', 'Dashboard\reviewController@store')->name( 'store.review');
+
 
 });

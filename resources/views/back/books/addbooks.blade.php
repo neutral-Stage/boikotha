@@ -69,7 +69,7 @@
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label">Category</label>
                                         <div class="col-sm-10">
-                                            <select class="form-control" tabindex="-1" aria-hidden="true" name="cate">
+                                            <select class="form-control select2_demo_1" tabindex="-1" aria-hidden="true" name="cate">
                                        
                                             <option value="AK">Alaska</option>
                                             <option value="HI">Hawaii</option>
