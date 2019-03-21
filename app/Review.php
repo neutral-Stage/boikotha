@@ -12,10 +12,10 @@ class Review extends Model
 
     public function reviewer()
     {
-        return $this->belongsTo('App\User', 'reviewer_id');
+        return $this->belongsTo('App\Reviewer', 'reviewer_id');
     }
     public function book()
     {
-        return $this->belongsTo('App\User', 'book_id');
+        return $this->belongsTo('App\Book', 'book_id');
     }
 }

@@ -29,6 +29,7 @@
 	<link rel="stylesheet" href="{{asset('front')}}/css/animate.min.css">
 	<link rel="stylesheet" href="{{asset('front')}}/css/owl.carousel.css">
 	<link rel="stylesheet" href="{{asset('front')}}/css/main.css">
+	
 </head>
 
 <body>

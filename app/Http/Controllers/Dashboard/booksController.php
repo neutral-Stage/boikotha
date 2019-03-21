@@ -15,8 +15,8 @@ class booksController extends Controller
         // $enre= Re viewer::where('type','eng lish')->get();
 
         // $bnre= Re viewer::where('type','ban gla')->get();
-
-        return view('back.books.addbooks');
+        $book=Book::with( 'review')->latest()->paginate(10);
+        return view('back.books.addbooks',compact('book'));
     }
     public function store(Request $request)
     {
@@ -26,7 +26,7 @@ class booksController extends Controller
             $extention = $file->getClientOriginalExtension();
             $filename = rand(111111, 999999) . "." . $extention;
             $request['photo']=$filename  ;
-            $file->move('reiviewer_photo/', $filename);
+            $file->move('book_photo/', $filename);
         }
         Book::create($request->except('_token'));
         return redirect()->back()->with('message','Book Added Successfully.');

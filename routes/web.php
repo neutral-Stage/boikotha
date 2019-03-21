@@ -18,6 +18,7 @@ Auth::routes();
 Route::get('/', 'frontController@index')->name('home');
 Route::get( '/reviewer', 'frontController@reviewer')->name('reviewer');
 Route::get( '/about', 'frontController@about')->name('about');
+Route::get( '/booklist', 'frontController@booklist')->name('booklist');
 
 Route::get('english', function () {
     session(['lang' => 'eng']);

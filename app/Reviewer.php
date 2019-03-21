@@ -14,8 +14,5 @@ class Reviewer extends Model
     {
         return $this->hasMany('App\Review', 'reviewer_id');
     }
-    public function book()
-    {
-        return $this->hasOne('App\book');
-    }
+    
 }
