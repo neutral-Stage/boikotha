@@ -31,22 +31,22 @@
 										
                 @foreach ($books as $book)
                     
-							<div class="col-lg-6 col-md-6">
-								<div class="single-post-item">
-									<div class="post-thumb">
-										<img class="img-fluid" src="{{ asset('book_photo/'.$book->photo) }}" alt="">
-									</div>
-									<div class="post-details">
-										<h4><a href="#">{{ $book->title }}</a></h4>
-										<p>{{ $book->title }}</p>
-										<div class="blog-meta">
-											<a href="#" class="m-gap"></a>
-											<a href="#" class="m-gap"></a>
-										</div>
-									</div>
+					<div class="col-lg-6 col-md-6">
+						<div class="single-post-item">
+							<div class="post-thumb">
+								<img class="img-fluid" src="{{ asset('book_photo/'.$book->photo) }}" alt="">
+							</div>
+							<div class="post-details">
+								<h4><a href="{{ route('book.detail',['id'=>$book->id, 'book_name'=>$book->title]) }}">{{ $book->title }}</a></h4>
+								<p>{{ $book->title }}</p>
+								<p>Review {{ $book->review->avg('rating') }}</p>
+								<div class="blog-meta">
+									<a href="#" class="m-gap"></a>
+									<a href="#" class="m-gap"></a>
 								</div>
 							</div>
-
+						</div>
+					</div>
 					
 				@endforeach
 							

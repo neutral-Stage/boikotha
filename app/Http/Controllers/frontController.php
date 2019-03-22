@@ -24,13 +24,26 @@ class frontController extends Controller
     {
         return view('front.about');
     }
-    public function booklist(Request $request)
+    public function booklist()
     {
         $books=Book::with('review')->get();
         $reviews=Review::with('reviewer','book')->get();
 
         //$data = $request->session()->all();
-        // return $review;
+         //return $books;
         return view( 'front.booklist',compact( 'reviews', 'books'));
     }
+
+
+    public function bookDetail($id)
+    {
+        $book = Book::where('id', $id)->with('review')->first();
+        foreach ($book->review as $rvw) {
+                $reviews[] = Reviewer::where('id',$rvw->reviewer_id)->first();
+            }
+            return view( 'front.bookDetail',compact( 'reviews', 'book'));
+            
+        }
+
+    
 }
