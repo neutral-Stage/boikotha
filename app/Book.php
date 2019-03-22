@@ -15,5 +15,7 @@ class Book extends Model
     {
         return $this->hasMany( 'App\Review', 'book_id');
     }
+
+    
     
 }
