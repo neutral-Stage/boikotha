@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Reviewer extends Model
 {
     protected $fillable = [
-        'name', 'des', 'photo','type'
+        'name', 'des', 'photo','bn_name', 'bn_des', 'photo',
     ];
 
     public function review()

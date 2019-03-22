@@ -15,10 +15,13 @@ class CreateReviewersTable extends Migration
     {
         Schema::create('reviewers', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->text('des');
+            $table->string('name')->nullable();
+            $table->text('des')->nullable();
             $table->string('photo');
-            $table->string('type');
+            $table->string('bn_name')->nullable();
+            $table->text('bn_des')->nullable();
+          
+           
             $table->timestamps();
         });
     }

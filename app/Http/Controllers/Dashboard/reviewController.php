@@ -14,11 +14,12 @@ class reviewController extends Controller
 
         
         $book=Book::all();
-        $enre= Reviewer::where('type','english')->get();
 
-        $bnre= Reviewer::where('type','bangla')->get();
+        $reviewer= Reviewer::get();
 
-        return view('back.review.newreview',compact( 'enre','bnre','book'));
+       
+
+        return view('back.review.newreview',compact( 'reviewer','book'));
     }
 
     public function store(Request $request)

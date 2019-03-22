@@ -10,11 +10,11 @@ class reviewerController extends Controller
 {
     public function index(){
 
-        $enre= Reviewer::where('type','english')->get();
+       
 
-        $bnre= Reviewer::where('type','bangla')->get();
+        $reviewer= Reviewer::get();
 
-        return view('back.reviewer.addreview', compact( 'enre', 'bnre'));
+        return view('back.reviewer.addreview', compact( 'reviewer'));
     }
 
     public function store(Request $request)
