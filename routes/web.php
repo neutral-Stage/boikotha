@@ -54,6 +54,10 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     //Review
     Route::get('/add-review', 'Dashboard\reviewController@index')->name('add.review');
     Route::post('/store-review', 'Dashboard\reviewController@store')->name( 'store.review');
+    Route::get('/edit-review/{id}', 'Dashboard\reviewController@edit')->name('edit.review');
+    Route::post('/update-review/{id}', 'Dashboard\reviewController@update')->name('update.review');
+    Route::get('/delete-review/{id}', 'Dashboard\reviewController@delete')->name('delete.review');
+
 
 
 });

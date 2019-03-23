@@ -17,9 +17,9 @@ class reviewController extends Controller
 
         $reviewer= Reviewer::get();
 
-       
+       $review = Review::all();
 
-        return view('back.review.newreview',compact( 'reviewer','book'));
+        return view('back.review.newreview',compact( 'reviewer','book', 'review'));
     }
 
     public function store(Request $request)
@@ -30,5 +30,30 @@ class reviewController extends Controller
         return redirect()->back()->with('message','Review Added Successfully.');
 
        
+    }
+
+    public function edit($id)
+    {
+        $review = Review::find($id);
+        $book=Book::all();
+        $reviewer= Reviewer::get();
+       
+        return view('back.review.upreview',compact( 'review', 'book','reviewer'));
+    }
+    public function update(Request $request, $id)
+    {
+        $review = Review::find($id);
+        
+        Review::where('id',$id)->update($request->except('_token'));
+        return redirect()->back()->with('message', 'Review  Updated Successfully');
+    }
+
+    public function delete($id)
+    {
+
+        $review = Review::find($id);
+        
+        $review->delete();
+        return redirect()->back()->with('message', 'Review  Deleted successfully.');
     }
 }
