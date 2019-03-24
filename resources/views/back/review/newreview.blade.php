@@ -6,7 +6,6 @@
                             <div class="ibox-title">Add Reviewer</div>
                         </div>
                         <div class="ibox-body">
-                           
                     
                               
                                     @if(session()->has('message'))
@@ -21,8 +20,8 @@
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label">Select Book</label>
                                         <div class="col-sm-10">
-                                            <select class="form-control select2_demo_1" tabindex="-1" aria-hidden="true" name="book_id">
-                                       
+                                            <select class="form-control select2_demo_1" tabindex="-1" aria-hidden="true" id="book_id" name="book_id">
+                                       <option value="" selected>-- Select Book --</option>
                                                 @foreach ($book as $b)
                                                     <option value="{{ $b->id }}">{{ $b->title }}</option>
                                                 @endforeach
@@ -34,7 +33,8 @@
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label">Select Reviewer</label>
                                         <div class="col-sm-10">
-                                            <select class="form-control select2_demo_1" tabindex="-1" aria-hidden="true" name="reviewer_id">
+                                            <select class="form-control select2_demo_1" tabindex="-1" aria-hidden="true" name="reviewer_id" id="reviewer_id">
+                                                <option value="" selected>-- Select Reviewer --</option>
                                                 @foreach ($reviewer as $en)
                                                     <option value="{{ $en->id }}">{{ $en->name }}</option>
                                                 @endforeach
@@ -150,4 +150,34 @@
     <script>
         CKEDITOR.replace( 'bdes' );
     </script>
+
+@endsection
+@section('script')
+    <script>
+
+    $('#book_id').on('change',function () {
+
+        var val = $(this).val();
+        if(val>=1)
+        {
+            $.ajax({
+                type:'post',
+                url:'{{route('getcategory')}}',
+                data:{
+                book_id:val,
+                '_token':'{{csrf_token()}}'
+                },
+                success:function (data) {
+                    var resultContainer = $('#reviewer_id');
+                    var option = '', showUrl = '', token = '', number = 1;
+                    data.map(function(datas) {
+                        option+="<option value="+datas.id+">"+datas.name+"</option>";
+                    });
+                    resultContainer.html(option);
+                }
+            })
+        }
+    })
+
+</script>
 @endsection

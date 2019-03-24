@@ -57,7 +57,9 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/edit-review/{id}', 'Dashboard\reviewController@edit')->name('edit.review');
     Route::post('/update-review/{id}', 'Dashboard\reviewController@update')->name('update.review');
     Route::get('/delete-review/{id}', 'Dashboard\reviewController@delete')->name('delete.review');
-
-
-
+    Route::post('getcategory', ['uses' => 'Dashboard\reviewController@getcategory', 'as'=>'getcategory']);
 });
+
+
+
+//Route::post('check', 'Dashboard\reviewController@check')->name('rev');

@@ -22,67 +22,53 @@
 	<div class="main-body section-gap">
 		<div class="container box_1170">
 			<div class="row">
-				<div class="col-lg-8 post-list">
-					<!-- Start Post Area -->
-					<section class="post-area">
-						<div class="row">
+				
 
-														{{--  Reviewers  --}}
-										
-                @foreach ($books as $book)
-                    
-					<div class="col-lg-6 col-md-6">
-						<div class="single-post-item">
-							<div class="post-thumb">
-								<img class="img-fluid" src="{{ asset('book_photo/'.$book->photo) }}" alt="">
-							</div>
-							<div class="post-details">
-								<h4><a href="{{ route('book.detail',['id'=>$book->id, 'book_name'=>$book->title]) }}">{{ $book->title }}</a></h4>
-								<p>{{ $book->title }}</p>
-								<p>Review {{ $book->review->avg('rating') }}</p>
-								<div class="blog-meta">
-									<a href="#" class="m-gap"></a>
-									<a href="#" class="m-gap"></a>
-								</div>
-							</div>
-						</div>
-					</div>
+		 @foreach ($books as $book)
+        <div class="col-md-3 col-sm-6">
+            <div class="product-grid3">
+                <div class="product-image3">
+                    <a href="{{ route('book.detail',['id'=>$book->id, 'book_name'=>$book->title]) }}">
+                        <img class="pic-1"  src="{{ asset('book_photo/'.$book->photo) }}">
+                        <img class="pic-2"  src="{{ asset('book_photo/'.$book->photo) }}">
+                    </a>
+                    <ul class="social">
+                        <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
+                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                    </ul>
+                    <span class="product-new-label">New</span>
+                </div>
+                <div class="product-content">
+                    <h3 class="title"><a href="{{ route('book.detail',['id'=>$book->id, 'book_name'=>$book->title]) }}">{{ $book->title }}</a></h3>
+                    <div class="price">
+                        {{ $book->price }} Tk.
+                        {{-- <span>$75.00</span> --}}
+                    </div>
+                    <ul class="rating">
+						@php $rating = $book->review->avg('rating'); @endphp  
+						  @foreach(range(1,5) as $i)
+                <span class="fa-stack " style="width:1em">
+                    <i class="fa fa-star-o fa-stack-1x "></i>
+
+                    @if($rating >0)
+                        @if($rating >0.5)
+                            <i class="fa fa-star fa-stack-1x"></i>
+                        @else
+                            <i class="fa fa-star-half fa-stack-1x"></i>
+                        @endif
+                    @endif
+                    @php $rating--; @endphp
+                </span>
+            @endforeach
+                        ({{ $book->review->avg('rating') }})
+					</ul>
 					
-				@endforeach
-							
-
-							{{--  <div class="col-lg-12">
-								<nav class="blog-pagination justify-content-center d-flex">
-									<ul class="pagination">
-										<li class="page-item">
-											<a href="#" class="page-link" aria-label="Previous">
-												<span aria-hidden="true">
-													<span class="lnr lnr-arrow-left"></span>
-												</span>
-											</a>
-										</li>
-										<li class="page-item"><a href="#" class="page-link">01</a></li>
-										<li class="page-item active"><a href="#" class="page-link">02</a></li>
-										<li class="page-item"><a href="#" class="page-link">03</a></li>
-										<li class="page-item"><a href="#" class="page-link">04</a></li>
-										<li class="page-item"><a href="#" class="page-link">09</a></li>
-										<li class="page-item">
-											<a href="#" class="page-link" aria-label="Next">
-												<span aria-hidden="true">
-													<span class="lnr lnr-arrow-right"></span>
-												</span>
-											</a>
-										</li>
-									</ul>
-								</nav>
-							</div>  --}}
-
-						</div>
-					</section>
-					<!-- Start Post Area -->
-				</div>
-
-
+                </div>
+            </div>
+		</div>
+		@endforeach
+	
+	
 				<div class="col-lg-4 sidebar">
 					
 					

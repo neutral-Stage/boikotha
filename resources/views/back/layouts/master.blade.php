@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>Admincast bootstrap 4 &amp; angular 5 admin template, Шаблон админки | Dashboard</title>
     <!-- GLOBAL MAINLY STYLES-->
     <link href="{{ asset('back') }}/assets/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -356,6 +358,17 @@
     <!-- PAGE LEVEL SCRIPTS-->
     {{--  <script src="{{ asset('back') }}/assets/js/scripts/dashboard_1_demo.js" type="text/javascript"></script>  --}}
     <script src="{{ asset('back') }}/assets/js/scripts/form-plugins.js" type="text/javascript"></script>
+    <script>
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+     
+   
+ </script>
+    @yield('script')
+    
 </body>
 
 </html>

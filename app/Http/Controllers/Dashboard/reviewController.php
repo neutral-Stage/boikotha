@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Review;
+use DB;
 use App\Reviewer;
 use App\Book;
 use Illuminate\Http\Request;
@@ -55,5 +56,22 @@ class reviewController extends Controller
         
         $review->delete();
         return redirect()->back()->with('message', 'Review  Deleted successfully.');
+    }
+
+    public function getcategory( Request $request)
+    {
+        //return $id;
+        $var = array();
+        $except = Review::where('book_id', $request->book_id)->select('reviewer_id')->get();
+        //return  $except;
+        foreach($except  as $except){
+            $var[] = $except->reviewer_id;
+        }
+        //return $var;
+        $rev = DB::table('reviewers')
+                ->whereNotIn('id', $var)
+                ->get();
+         return  $rev;
+       
     }
 }
