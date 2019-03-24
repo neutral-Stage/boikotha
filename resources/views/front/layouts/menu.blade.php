@@ -1,4 +1,4 @@
-{{-- 
+
 
 <!--================ Start header Top Area =================-->
 	<section class="header-top">
@@ -57,4 +57,4 @@
 				</form>
 			</div>
 		</div>  --}}
-	</header> --}}
+	</header> 

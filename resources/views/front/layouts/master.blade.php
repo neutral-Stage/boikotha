@@ -5,7 +5,7 @@
 	<!-- Mobile Specific Meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!-- Favicon-->
-	<link rel="shortcut icon" href="{{asset('front')}}/img/fav.png">
+	<link rel="shortcut icon" href="{{asset('front')}}/img/boi.png">
 	<!-- Author Meta -->
 	<meta name="author" content="codepixer">
 	<!-- Meta Description -->
@@ -15,7 +15,7 @@
 	<!-- meta character set -->
 	<meta charset="UTF-8">
 	<!-- Site Title -->
-	<title>Ruft Blog</title>
+	<title>Boi Kotha</title>
 
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500|Rubik:500" rel="stylesheet">
 	<!--
@@ -34,14 +34,13 @@
 
 <body>
 
-	{{-- <a href="{{ route('check') }}">Check</a>  || --}}
 	<div class="language" style="float:right;margin-right:200px;padding: 15px 20px;background-color:black;">
 		@if(session('lang') == 'ban') 
 		  	<a href="{{ route('english') }}" style="color:white;">English</a>  
 		  @elseif(session('lang') == 'eng')
 		  	<a href="{{ route('bangla') }}" style="color:white;">বাংলা</a>
 		  @else
-		  	<a href="{{ route('english') }}" style="color:white;">English</a>
+		  	<a href="{{ route('bangla') }}" style="color:white;">বাংলা</a>
 		  @endif
 
 	</div>

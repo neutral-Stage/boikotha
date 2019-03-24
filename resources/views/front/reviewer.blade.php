@@ -35,30 +35,24 @@
 									</div>
 									<div class="post-details">
 										<h4><a href="#">{{ $er->name }}</a></h4>
-										<p>{{ $er->des }}</p>
-										<div class="blog-meta">
-											<a href="#" class="m-gap"><span class="lnr lnr-calendar-full"></span>March 14, 2018</a>
-											<a href="#" class="m-gap"><span class="lnr lnr-bubble"></span>05</span></a>
-										</div>
+										{!! $er->des !!}
+										
 									</div>
 								</div>
 							</div>
 
 							@endforeach
 							@elseif(session('lang') == 'ban')
-							@foreach ($bnre as $br)
+							@foreach ($enre as $er)
 							<div class="col-lg-6 col-md-6">
 								<div class="single-post-item">
 									<div class="post-thumb">
-										<img class="img-fluid" src="{{ asset('reiviewer_photo/'.$br->photo) }}" alt="">
+										<img class="img-fluid" src="{{ asset('reiviewer_photo/'.$er->photo) }}" alt="">
 									</div>
 									<div class="post-details">
-										<h4><a href="#">{{ $br->name }}</a></h4>
-										<p>{{ $br->des }}</p>
-										<div class="blog-meta">
-											<a href="#" class="m-gap"><span class="lnr lnr-calendar-full"></span>March 14, 2018</a>
-											<a href="#" class="m-gap"><span class="lnr lnr-bubble"></span>05</span></a>
-										</div>
+										<h4><a href="#">{{ $er->name }}</a></h4>
+										{!! $er->bn_des !!}
+										
 									</div>
 								</div>
 							</div>
@@ -73,11 +67,8 @@
 									</div>
 									<div class="post-details">
 										<h4><a href="#">{{ $er->name }}</a></h4>
-										<p>{{ $er->des }}</p>
-										<div class="blog-meta">
-											<a href="#" class="m-gap"><span class="lnr lnr-calendar-full"></span>March 14, 2018</a>
-											<a href="#" class="m-gap"><span class="lnr lnr-bubble"></span>05</span></a>
-										</div>
+										{!! $er->des !!}
+										
 									</div>
 								</div>
 							</div>

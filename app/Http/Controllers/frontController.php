@@ -15,8 +15,8 @@ class frontController extends Controller
     }
     public function reviewer()
     {
-        $enre= Reviewer::where('type','english' )->get();
-        $bnre= Reviewer::where('type','bangla') ->get();
+        $enre= Reviewer::get();
+        
 
         return view('front.reviewer', compact('enre', 'bnre'));
     }
