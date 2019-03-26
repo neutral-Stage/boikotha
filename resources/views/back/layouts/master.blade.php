@@ -13,6 +13,9 @@
     <link href="{{ asset('back') }}/assets/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <link href="{{ asset('back') }}/assets/vendors/themify-icons/css/themify-icons.css" rel="stylesheet" />
     <link href="{{ asset('back') }}/assets/vendors/select2/dist/css/select2.min.css" rel="stylesheet" />
+
+    <link href="{{ asset('back') }}/assets/vendors/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css" rel="stylesheet" />
+    <link href="{{ asset('back') }}/assets/vendors/bootstrap-timepicker/css/bootstrap-timepicker.min.css" rel="stylesheet" />
     <!-- PLUGINS STYLES-->
     <link href="{{ asset('back') }}/assets/vendors/jvectormap/jquery-jvectormap-2.0.3.css" rel="stylesheet" />
     <!-- THEME STYLES-->
@@ -344,6 +347,7 @@
     <script src="{{ asset('back') }}/assets/vendors/metisMenu/dist/metisMenu.min.js" type="text/javascript"></script>
     <script src="{{ asset('back') }}/assets/vendors/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
     <!-- PAGE LEVEL PLUGINS-->
+     <script src="{{ asset('back') }}/assets/vendors/moment/min/moment.min.js" type="text/javascript"></script>
     <script src="{{ asset('back') }}/assets/vendors/select2/dist/js/select2.full.min.js" type="text/javascript"></script>
     <script src="{{ asset('back') }}/assets/vendors/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
     <script src="{{ asset('back') }}/assets/vendors/jquery-knob/dist/jquery.knob.min.js" type="text/javascript"></script>

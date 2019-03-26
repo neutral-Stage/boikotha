@@ -1760,10 +1760,13 @@ h6 {
   display: none;
   transition: all 0.4s;
   outline: none;
-  cursor: pointer; }
+  cursor: pointer;
+  background-color: black;
+  padding: 3px 5px;
+}
 
 #mobile-nav-toggle i {
-  color: #7c32ff;
+  color: #ffffff;
   font-weight: 900; }
 
 @media (max-width: 960px) {
@@ -2797,4 +2800,31 @@ body.mobile-nav-active #mobile-nav-toggle {
     margin-right: 0px; }
 
 /*# sourceMappingURL=main.css.map */
+
+/* language */
+.language{
+  float:right;
+  margin-right:200px;
+  padding: 15px 20px;
+  background-color:black;
+}
+@media (max-width: 960px) {
+    .language {
+          position: fixed;
+          /* right: 15px; */
+          z-index: 999;
+          /* top: 19px; */
+          left: 450px;
+          border: 0;
+          background: none;
+          font-size: 15px;
+          transition: all 0.4s;
+          outline: none;
+          cursor: pointer;
+          background-color: black;
+          padding: 3px 5px;
+    }
+
+    
+}
 

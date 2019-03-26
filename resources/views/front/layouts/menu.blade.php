@@ -25,23 +25,23 @@
 						  <li class="menu-active yellow"><a href="{{ route ('home')}}" >হোমপেজ</a></li>
 							<li class="red"><a href="{{ route('booklist') }}" >বই</a></li>
 							<li class="indigo"><a href="{{ route ('reviewer')}}" >আমাদের রিভিউয়ার</a></li>
-							<li class="menu-has-children orange"><a href="{{asset('front')}}/" >রিভিউ</a></li>
-							<li class="menu-has-children red"><a href="{{ route ('about')}}" >কে আমরা</a></li>
-							<li class="yellow"><a href="{{asset('front')}}/contact.html" >যোগাযোগ</a></li>  
+							<li class="orange"><a href="{{asset('front')}}/" >রিভিউ</a></li>
+							<li class="red"><a href="{{ route ('about')}}" >কে আমরা</a></li>
+							<li class="yellow"><a href="{{ route ('contact')}}" >যোগাযোগ</a></li>  
 						@elseif(session('lang') == 'eng')
 							<li class="menu-active yellow"><a href="{{ route ('home')}}">Home</a></li>
 							<li class="red"><a href="{{ route('booklist') }}">Browse Books</a></li>
 							<li class="indigo"><a href="{{ route ('reviewer')}}">Meet Our Reviewers</a></li>
-							<li class="menu-has-children orange"><a href="{{asset('front')}}/">Read a Review</a></li>
-							<li class="menu-has-children red"><a href="{{ route ('about')}}">About Us</a></li>
-							<li class="yellow"><a href="{{asset('front')}}/contact.html">Contact Us</a></li>
+							<li class="orange"><a href="{{asset('front')}}/">Read a Review</a></li>
+							<li class="red"><a href="{{ route ('about')}}">About Us</a></li>
+							<li class="yellow"><a href="{{ route ('contact')}}">Contact Us</a></li>
 						@else
 							<li class="menu-active yellow"><a href="{{ route ('home')}}">Home</a></li>
 							<li class="red"><a href="{{ route('booklist') }}">Browse Books</a></li>
 							<li class="indigo"><a href="{{ route ('reviewer')}}">Meet Our Reviewers</a></li>
-							<li class="menu-has-children orange"><a href="{{asset('front')}}/">Read a Review</a></li>
-							<li class="menu-has-children red"><a href="{{ route ('about')}}">About Us</a></li>
-							<li class="yellow"><a href="{{asset('front')}}/contact.html">Contact Us</a></li>
+							<li class="orange"><a href="{{asset('front')}}/">Read a Review</a></li>
+							<li class="red"><a href="{{ route ('about')}}">About Us</a></li>
+							<li class="yellow"><a href="{{ route ('contact')}}">Contact Us</a></li>
 						@endif
 					</ul>
 				</nav>

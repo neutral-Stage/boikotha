@@ -60,11 +60,15 @@
                                             <input class="form-control" type="text"  name="isbn">
                                         </div>
                                     </div>
-                                    <div class="form-group row">
+                                    <div class="form-group row" id="date_1">
                                         <label class="col-sm-2 col-form-label">Publication date</label>
                                         <div class="col-sm-10">
-                                            <input class="form-control" type="text"  name="public_date">
+                                            <div class="input-group date">
+                                                <span class="input-group-addon bg-white"><i class="fa fa-calendar"></i></span>
+                                                <input class="form-control" type="text" name="public_date">
+                                            </div>
                                         </div>
+                                        
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label">Category</label>

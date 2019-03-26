@@ -35,7 +35,7 @@
 
 <body>
 
-	<div class="language" style="float:right;margin-right:200px;padding: 15px 20px;background-color:black;">
+	<div class="language" >
 		@if(session('lang') == 'ban') 
 		  	<a href="{{ route('english') }}" style="color:white;">English</a>  
 		  @elseif(session('lang') == 'eng')

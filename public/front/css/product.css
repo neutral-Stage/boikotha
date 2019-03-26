@@ -196,3 +196,21 @@
 }
 /* .fa-stack-1x,
 .fa-stack-2x width:100% */
+
+a.list-group-item {
+    height: auto;
+    min-height: 220px;
+}
+
+a.list-group-item.active small {
+    color: #fff;
+}
+
+.stars {
+    margin: 20px auto 1px;
+}
+
+.whole-wrapul{
+    scroll-behavior: smooth;
+
+}

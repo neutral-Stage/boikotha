@@ -44,6 +44,9 @@ class frontController extends Controller
             return view( 'front.bookDetail',compact( 'reviews', 'book'));
             
         }
-
+    public function contact()
+    {
+        return view( 'front.contact');
+    }
     
 }
