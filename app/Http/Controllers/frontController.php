@@ -48,5 +48,10 @@ class frontController extends Controller
     {
         return view( 'front.contact');
     }
+    public function readReview()
+    {   $reviews=Review::with('reviewer','book')->get();
+        //return $reviews;
+        return view( 'front.read',compact('reviews'));
+    }
     
 }

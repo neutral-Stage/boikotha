@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Admincast bootstrap 4 &amp; angular 5 admin template, Шаблон админки | Dashboard</title>
+    <title>Boi Kotha | Dashboard</title>
     <!-- GLOBAL MAINLY STYLES-->
     <link href="{{ asset('back') }}/assets/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="{{ asset('back') }}/assets/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" />

@@ -21,6 +21,7 @@ Route::get( '/about', 'frontController@about')->name('about');
 Route::get( '/booklist', 'frontController@booklist')->name('booklist');
 Route::get( '/book/j847n84{id}368/detail/{title}', 'frontController@bookDetail')->name('book.detail');
 Route::get('/contact', 'frontController@contact')->name( 'contact');
+Route::get('/readReview', 'frontController@readReview')->name( 'readReview');
 
 
 Route::get('english', function () {
