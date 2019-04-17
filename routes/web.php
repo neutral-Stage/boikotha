@@ -61,6 +61,13 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::post('/update-review/{id}', 'Dashboard\reviewController@update')->name('update.review');
     Route::get('/delete-review/{id}', 'Dashboard\reviewController@delete')->name('delete.review');
     Route::post('getcategory', ['uses' => 'Dashboard\reviewController@getcategory', 'as'=>'getcategory']);
+
+    //Video
+    Route::get('/add-video-review', 'Dashboard\videoController@index')->name('add.video');
+    Route::post( '/store-video-review', 'Dashboard\videoController@store')->name('store.video');
+    Route::get('/edit-video/{id}', 'Dashboard\videoController@edit')->name('edit.video');
+    Route::post('/update-video/{id}', 'Dashboard\videoController@update')->name('update.video');
+    Route::get('/delete-video/{id}', 'Dashboard\videoController@delete')->name('delete.video');
 });
 
 

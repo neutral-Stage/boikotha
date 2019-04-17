@@ -28,6 +28,15 @@ class booksController extends Controller
             $request['photo']=$filename  ;
             $file->move('book_photo/', $filename);
         }
+
+        $cate = $request->input('cate');
+        $cate = implode(',', $news);
+
+        $input = $request->except('cate');
+        //Assign the "mutated" news value to $input
+        $input['cate'] = $cate;
+
+
         Book::create($request->except('_token'));
         return redirect()->back()->with('message','Book Added Successfully.');
 

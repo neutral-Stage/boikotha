@@ -41,6 +41,7 @@
                         <ul class="nav-2-level collapse">
                             <li>
                                 <a href="{{ route('add.review') }}">Add A Review</a>
+                                <a href="{{ route('add.video') }}">Add Video Review</a>
                             </li>
                             
                         </ul>
