@@ -22,43 +22,61 @@
 	<div class="main-body section-gap">
 		<div class="container box_1170">
 			<div class="row">
+				<div class="col-md-4">
+				<label for="">Price</label>
+				<input name="" id="" class="btn btn-primary" type="button" value="">
+				</div>
+				<div class="col-md-4">
+				<label for="">Age</label>
+				<input name="" id="" class="btn btn-primary" type="button" value="">
+				</div>
+				<div class="col-md-4">
 				
-
+				<div class="form-group">
+				  <label for="">Select Category</label>
+				  <select class="form-control" name="" id="" multiple>
+					<option>SAR</option>
+				  </select>
+				</div>
+				</div>
+					
+			</div>
+			<div class="row">	
 		 @foreach ($books as $book)
-        <div class="col-md-3 col-sm-6">
-            <div class="product-grid3">
-                <div class="product-image3">
-                    <a href="{{ route('book.detail',['id'=>$book->id, 'book_name'=>$book->title]) }}">
-                        <img class="pic-1"  src="{{ asset('book_photo/'.$book->photo) }}">
-                        <img class="pic-2"  src="{{ asset('book_photo/'.$book->photo) }}">
-                    </a>
-                    <ul class="social">
-                        <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                    </ul>
-                    <span class="product-new-label">New</span>
-                </div>
-                <div class="product-content">
-                    <h3 class="title"><a href="{{ route('book.detail',['id'=>$book->id, 'book_name'=>$book->title]) }}">{{ $book->title }}</a></h3>
-                    <div class="price">
-                        {{ $book->price }} Tk.
-                        {{-- <span>$75.00</span> --}}
-                    </div>
-                    <ul class="rating">
-						@php $rating = $book->review->avg('rating'); @endphp  
-						  @foreach(range(1,5) as $i)
-                <span class="fa-stack " style="width:1em">
-                    <i class="fa fa-star-o fa-stack-1x "></i>
+				<div class="col-md-3 col-sm-6">
+					<div class="product-grid3">
+						<div class="product-image3">
+							<a href="{{ route('book.detail',['id'=>$book->id, 'book_name'=>$book->title]) }}">
+								<img class="pic-1"  src="{{ asset('book_photo/'.$book->photo) }}">
+								<img class="pic-2"  src="{{ asset('book_photo/'.$book->photo) }}">
+							</a>
+							<ul class="social">
+								<li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
+								<li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+							</ul>
+							<span class="product-new-label">New</span>
+						</div>
+						<div class="product-content">
+							<h3 class="title"><a href="{{ route('book.detail',['id'=>$book->id, 'book_name'=>$book->title]) }}">{{ $book->title }}</a></h3>
+							<div class="price">
+								{{ $book->price }} Tk.
+								{{-- <span>$75.00</span> --}}
+							</div>
+							<ul class="rating">
+								@php $rating = $book->review->avg('rating'); @endphp  
+								@foreach(range(1,5) as $i)
+						<span class="fa-stack " style="width:1em">
+							<i class="fa fa-star-o fa-stack-1x "></i>
 
-                    @if($rating >0)
-                        @if($rating >0.5)
-                            <i class="fa fa-star fa-stack-1x"></i>
-                        @else
-                            <i class="fa fa-star-half fa-stack-1x"></i>
-                        @endif
-                    @endif
-                    @php $rating--; @endphp
-                </span>
+							@if($rating >0)
+								@if($rating >0.5)
+									<i class="fa fa-star fa-stack-1x"></i>
+								@else
+									<i class="fa fa-star-half fa-stack-1x"></i>
+								@endif
+							@endif
+							@php $rating--; @endphp
+						</span>
             @endforeach
                         ({{ $book->review->avg('rating') }})
 					</ul>
